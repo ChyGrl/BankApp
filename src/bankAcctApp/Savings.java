@@ -10,25 +10,30 @@ public class Savings extends Account {
 		super(name, ssn, dep);
 		acctNum = "1" + acctNum;
 		setSafeBox();
-		
-		
-//		System.out.println("\n---Savings account---\n");
-//		System.out.println("Customer info" + "\nName: " + name + "\nSSN: " + ssn + "\nInitial Deposit: " + dep);
+
+		// System.out.println("\n---Savings account---\n");
+		// System.out.println("Customer info" + "\nName: " + name + "\nSSN: " + ssn +
+		// "\nInitial Deposit: " + dep);
 
 	}
-	private void setSafeBox() {
-		safeBoxId = (int)(Math.random() * Math.pow(10, 3));
-		safeBoxKey = (int)(Math.random()* Math.pow(10, 4));
+
+	@Override
+	public void setRate() {
+		rate = getBaseRate() - 0.25;
 	}
-	
+
+	private void setSafeBox() {
+		safeBoxId = (int) (Math.random() * Math.pow(10, 3));
+		safeBoxKey = (int) (Math.random() * Math.pow(10, 4));
+	}
+
 	// list any methods specific to savings account
-	
+
 	public void showInfo() {
 
 		super.showInfo();
 		System.out.println("Account Type: Savings");
 
-		System.out.println("Safety Deposit Box ID: " + safeBoxId
-				+ "\nSafety Deposit Box Key: " + safeBoxKey);
+		System.out.println("Safety Deposit Box ID: " + safeBoxId + "\nSafety Deposit Box Key: " + safeBoxKey);
 	}
 }

@@ -15,7 +15,15 @@ public class Checking extends Account {
 		// System.out.println("Customer info" + "\nName: " + name + "\nSSN: " + ssn +
 		// "\nInitial Deposit: " + dep);
 	}
-
+	@Override
+	public void setRate() {
+		
+		rate = getBaseRate()* 0.15;
+		
+		
+	}
+	
+		//Mathpow(10,12)--> gives 12 digits
 	private void setDebitCardNum() {
 		debitCardNum = (int) (Math.random()* Math.pow(10, 12));
 		debitPin= (int)(Math.random()*Math.pow(10, 4));
