@@ -1,8 +1,8 @@
 package bankAcctApp;
+// Interface for the Rates
 
 public interface IBaseRate {
 
-	// Interface for the Rates
 
 	// write a method that returns base rate.
 	default double getBaseRate() {
